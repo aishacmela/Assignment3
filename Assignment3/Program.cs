@@ -19,7 +19,7 @@
 				// Check for exit command
 				if (input.ToLower() == "exit")
 				{
-					break; // Exit the loop if user types "exit"
+					break; 
 				}
 
 				// Attempt to parse the input as an integer

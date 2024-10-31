@@ -81,7 +81,7 @@ namespace Assignment3
 			// Handle tens and units with dash condition
 			if (number >= 20)
 			{
-				words += Tens[number - number % 10]; // Add tens part (e.g., "Twenty", "Thirty")
+				words += Tens[number - number % 10];
 				number %= 10;
 
 				// Add dash if the last digit is not zero
@@ -93,14 +93,14 @@ namespace Assignment3
 			else if (number >= 10)
 			{
 				words += Teens[number] + " ";
-				return words.Trim(); // Return early for teen numbers
+				return words.Trim();
 			}
 			else if (number > 0) // Handle units if less than 10
 			{
 				words += Units[number] + " ";
 			}
 
-			return words.Trim(); // Trim to remove any trailing spaces
+			return words.Trim(); 
 		}
 
 
