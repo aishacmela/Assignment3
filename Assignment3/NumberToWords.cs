@@ -50,7 +50,7 @@ namespace Assignment3
 			{80, "Eighty"},
 			{90, "Ninety"},
 		};
-		public string ConvertToWords(int number)
+		public string ToWords(int number)
 		{
 			if (number < 0 || number > 9999)
 			{
@@ -78,26 +78,31 @@ namespace Assignment3
 				number %= 100;
 			}
 
-			// Handle tens and units
+			// Handle tens and units with dash condition
 			if (number >= 20)
 			{
-				words += Tens[number - number % 10] + " ";
+				words += Tens[number - number % 10]; // Add tens part (e.g., "Twenty", "Thirty")
 				number %= 10;
+
+				// Add dash if the last digit is not zero
+				if (number > 0)
+				{
+					words += "-" + Units[number]; 
+				}
 			}
 			else if (number >= 10)
 			{
 				words += Teens[number] + " ";
 				return words.Trim(); // Return early for teen numbers
 			}
-
-			// Handle units
-			if (number > 0)
+			else if (number > 0) // Handle units if less than 10
 			{
 				words += Units[number] + " ";
 			}
 
 			return words.Trim(); // Trim to remove any trailing spaces
 		}
+
 
 	}
 }

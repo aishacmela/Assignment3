@@ -28,7 +28,7 @@
 					if (number >= 0 && number <= 9999)
 					{
 						// Convert the number to words
-						string words = converter.ConvertToWords(number);
+						string words = converter.ToWords(number);
 						Console.WriteLine($"{number} -> {words}");
 					}
 					else
